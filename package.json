@@ -1,0 +1,30 @@
+{
+  "name": "tinder-dev.f-backend",
+  "version": "1.0.0",
+  "description": "backend for tinder-dev.f",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "backend",
+    "tinder",
+    "dev.f",
+    "Carlos Moctezuma",
+    "api development"
+  ],
+  "author": "Carlos Moctezuma",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "pg": "^8.10.0",
+    "sequelize": "^6.31.1",
+    "sequelize-auto": "^0.8.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
