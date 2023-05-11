@@ -19,7 +19,7 @@ export default class skills extends Model {
     sequelize,
     tableName: 'skills',
     schema: 'public',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "skills_pkey",
@@ -32,37 +32,3 @@ export default class skills extends Model {
   });
   }
 }
-
-
-
-/* const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('skills', {
-    id_skills: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
-    },
-    skill_name: {
-      type: DataTypes.STRING(250),
-      allowNull: false
-    }
-  }, {
-    sequelize,
-    tableName: 'skills',
-    schema: 'public',
-    timestamps: true,
-    indexes: [
-      {
-        name: "skills_pkey",
-        unique: true,
-        fields: [
-          { name: "id_skills" },
-        ]
-      },
-    ]
-  });
-};
- */

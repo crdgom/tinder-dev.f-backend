@@ -27,7 +27,7 @@ export default class company extends Model {
     sequelize,
     tableName: 'company',
     schema: 'public',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "company_pkey",
@@ -40,43 +40,3 @@ export default class company extends Model {
   });
   }
 }
-
-/* 
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('company', {
-    id_company: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
-    },
-    company_name: {
-      type: DataTypes.STRING(250),
-      allowNull: false
-    },
-    account_type: {
-      type: DataTypes.STRING(250),
-      allowNull: false
-    },
-    company_logo: {
-      type: DataTypes.TEXT,
-      allowNull: true
-    }
-  }, {
-    sequelize,
-    tableName: 'company',
-    schema: 'public',
-    timestamps: true,
-    indexes: [
-      {
-        name: "company_pkey",
-        unique: true,
-        fields: [
-          { name: "id_company" },
-        ]
-      },
-    ]
-  });
-}; */

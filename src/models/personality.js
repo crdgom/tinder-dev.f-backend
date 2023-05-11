@@ -19,7 +19,7 @@ export default class personality extends Model {
     sequelize,
     tableName: 'personality',
     schema: 'public',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
         name: "personality_pkey",
@@ -32,38 +32,3 @@ export default class personality extends Model {
   });
   }
 }
-
-
-
-/* 
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('personality', {
-    id_personality: {
-      autoIncrement: true,
-      autoIncrementIdentity: true,
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true
-    },
-    personality_name: {
-      type: DataTypes.STRING(250),
-      allowNull: false
-    }
-  }, {
-    sequelize,
-    tableName: 'personality',
-    schema: 'public',
-    timestamps: true,
-    indexes: [
-      {
-        name: "personality_pkey",
-        unique: true,
-        fields: [
-          { name: "id_personality" },
-        ]
-      },
-    ]
-  });
-};
- */

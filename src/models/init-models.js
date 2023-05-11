@@ -10,14 +10,14 @@ import _services from  "./services.js";
 import _skills from  "./skills.js";
 
 export default function initModels(sequelize) {
-  const califications = _califications(sequelize, DataTypes);
-  const company = _company(sequelize, DataTypes);
-  const payments = _payments(sequelize, DataTypes);
-  const person = _person(sequelize, DataTypes);
-  const personality = _personality(sequelize, DataTypes);
-  const service_status = _service_status(sequelize, DataTypes);
-  const services = _services(sequelize, DataTypes);
-  const skills = _skills(sequelize, DataTypes);
+  const califications = _califications.init(sequelize, DataTypes);
+  const company = _company.init(sequelize, DataTypes);
+  const payments = _payments.init(sequelize, DataTypes);
+  const person = _person.init(sequelize, DataTypes);
+  const personality = _personality.init(sequelize, DataTypes);
+  const service_status = _service_status.init(sequelize, DataTypes);
+  const services = _services.init(sequelize, DataTypes);
+  const skills = _skills.init(sequelize, DataTypes);
 
   services.belongsTo(califications, { as: "calification_calification", foreignKey: "calification"});
   califications.hasMany(services, { as: "services", foreignKey: "calification"});

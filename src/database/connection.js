@@ -10,3 +10,17 @@ export const sequelize = new Sequelize(
         dialect: "postgres" //Que motor de base se utiliza
     }
 );
+
+
+/* export const sequelize = new Sequelize(
+    "tinder",//nombre de la base
+    "postgres", // nombre de usuario
+    "Spark85.", // contrasena de la base
+    {
+        host: "localhost",
+        port: 5432,
+        dialect: "postgres" //Que motor de base se utiliza
+    }
+); */
+
+/* node_modules\.bin\sequelize-auto -o "./src/models" -d "tinder" -h "localhost" -u "postgres" -p 5432 -x "Spark85." -e postgres -l esm */
