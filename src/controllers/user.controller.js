@@ -1,7 +1,6 @@
 import initModels from "../models/init-models.js";
 import { sequelize } from "../database/connection.js";
-import {Op} from "sequelize";
-import { response } from "express";
+
 
 let models = initModels(sequelize);
 
