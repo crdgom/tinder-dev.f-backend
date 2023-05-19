@@ -21,6 +21,15 @@ async function main(){
     app.use(userRoutes);
     app.use(companyRoutes);
     app.use(servicesRoutes);
+    app.listen(3000, () => {
+        console.log(`
+            Server running on port 3000
+            
+            http://localhost:3000/
+            
+            Press CTRL+C to stop server
+            `);
+    });
 };
 
 main();
