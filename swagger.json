@@ -1,0 +1,377 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Tinder DEVF",
+      "version": "1.0.0",
+      "description": "Final project for the DEVF Into Backend module."
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000",
+        "description": "Servidor local"
+      }
+    ],
+    "paths": {
+      "/api/getUsers": {
+        "get": {
+          "summary": "Obtener la lista de usuarios",
+          "responses": {
+            "200": {
+              "description": "Lista de usuarios"
+            }
+          }
+        }
+      },
+      "/api/getUser/{id}": {
+        "get": {
+          "summary": "Obtener un usuario por su id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del usuario",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Usuario"
+            }
+          }
+        }
+      },
+      "/api/createUser": {
+        "post": {
+          "summary": "Crear un usuario",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Person"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Usuario creado"
+            }
+          }
+        }
+      },
+      "/api/updateUser/{id}": {
+        "put": {
+          "summary": "Actualizar un usuario",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del usuario",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Usuario actualizado"
+            }
+          }
+        }
+      },
+      "/api/deleteUser/{id}": {
+        "delete": {
+          "summary": "Eliminar un usuario",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del usuario",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Usuario eliminado"
+            }
+          }
+        }
+      },
+      "/api/getCompanies": {
+        "get": {
+          "summary": "Obtener la lista de empresas",
+          "responses": {
+            "200": {
+              "description": "Lista de empresas"
+            }
+          }
+        }
+      },
+      "/api/getCompany/{id}": {
+        "get": {
+          "summary": "Obtener una empresa por su id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id de la empresa",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Empresa"
+            }
+          }
+        }
+      },
+      "/api/createCompany": {
+        "post": {
+          "summary": "Crear una empresa",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Empresa creada"
+            }
+          }
+        }
+      },
+      "/api/updateCompany/{id}": {
+        "put": {
+          "summary": "Actualizar una empresa",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id de la empresa",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Empresa actualizada"
+            }
+          }
+        }
+      },
+      "/api/deleteCompany/{id}": {
+        "delete": {
+          "summary": "Eliminar una empresa",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id de la empresa",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Empresa eliminada"
+            }
+          }
+        }
+      },
+      "/api/getServices": {
+        "get": {
+          "summary": "Obtener la lista de servicios",
+          "responses": {
+            "200": {
+              "description": "Lista de servicios"
+            }
+          }
+        }
+      },
+      "/api/getService/{id}": {
+        "get": {
+          "summary": "Obtener un servicio por su id",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del servicio",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Servicio"
+            }
+          }
+        }
+      },
+      "/api/createService": {
+        "post": {
+          "summary": "Crear un servicio",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Services"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Servicio creado"
+            }
+          }
+        }
+      },
+      "/api/updateService/{id}": {
+        "put": {
+          "summary": "Actualizar un servicio",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del servicio",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Services"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Servicio actualizado"
+            }
+          }
+        }
+      },
+      "/api/deleteService/{id}": {
+        "delete": {
+          "summary": "Eliminar un servicio",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id del servicio",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Servicio eliminado"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Person": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "age": {
+              "type": "integer"
+            }
+          }
+        },
+        "User": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "age": {
+              "type": "integer"
+            }
+          }
+        },
+        "Company": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "address": {
+              "type": "string"
+            }
+          }
+        },
+        "Services": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+  
