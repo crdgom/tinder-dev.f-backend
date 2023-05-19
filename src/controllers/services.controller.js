@@ -93,13 +93,13 @@ export const createService = async (req, res) =>{
 
     try{
         response_person = await models.person.findByPk(req.body.person_id);
+        person_hourly_rate = response_person.dataValues.hourly_rate;
         id_person = parseInt(response_person.dataValues.id_person);
-        console.log("id incontrado ", id_person);
-        person_hourly_rate = parseInt(response_person.dataValues.hourly_rate);
+        
         console.log("Valor de persona precio hora", person_hourly_rate);
 
         response_company = await models.company.findByPk(req.body.company_id);
-        console.log("id incontrado ", response_company);
+        console.log("id Encontrado ", response_company);
         company = response_company.dataValues.id_company;
 
         response = await models.services.create({
