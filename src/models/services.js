@@ -49,19 +49,11 @@ export default class services extends Model {
     },
     work_status: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'service_status',
-        key: 'id_service_status'
-      }
+      allowNull: true,
     },
     calification: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'califications',
-        key: 'id_calification'
-      }
+      allowNull: true,
     }
   }, {
     sequelize,

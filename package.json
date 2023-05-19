@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "backend for tinder-dev.f",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js"
@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.18.2",
     "helmet": "^7.0.0",
+    "moment": "^2.29.4",
     "pg": "^8.10.0",
     "sequelize": "^6.31.1",
     "sequelize-auto": "^0.8.8"

@@ -2,6 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import userRoutes from "./src/routes/user.routes.js";
 import companyRoutes from "./src/routes/company.routes.js";
+import servicesRoutes from "./src/routes/services.routes.js";
 import { sequelize } from './src/database/connection.js';
 
 async function main(){
@@ -19,6 +20,7 @@ async function main(){
     app.disable("x-powered-by");
     app.use(userRoutes);
     app.use(companyRoutes);
+    app.use(servicesRoutes);
     app.listen(3000, () => {
         console.log(`
             Server running on port 3000
