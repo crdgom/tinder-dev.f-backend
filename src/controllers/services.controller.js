@@ -16,10 +16,11 @@ export const getServices = async (req, res) => {
     let response;
     try{
         response = await models.services.findAll({
-            order:[[ 'id_service', 'ASC' ]],
+            order:[[ 'id_services', 'ASC' ]],
             exclude: ['createdAt', 'updatedAt']
         })
     }catch(error){
+        console.error(error);
         res.status(500).json({"message":"Error en el servidor, no pudimos recuperar los servicios inténtalo mas tarde"});
     }
     res.status(200).json(response);
@@ -38,7 +39,7 @@ export const getServiceById = async (req,res) =>{
 
     try{
         response = await models.services.findOne({
-            where: {id_service: id},
+            where: {id_services: id},
         })
     }catch(error){
         res.status(500).json({"message": "Error en el servido, no pudimos recuperar el servicio solicitado"})
@@ -58,7 +59,7 @@ export const updateService = async (req, res) => {
 
     try{
         response = await models.services.update(req.body, {
-            where: {id_service: id}
+            where: {id_services: id}
         })
     }catch(error){
         res.status(500).json({"message": "Error en el servidor, no pudimos actualizar el servicio solicitado solicitada"})
@@ -130,36 +131,6 @@ export const createService = async (req, res) =>{
     }catch(error){
         console.error(error);
         res.status(500).json({"message": "Error en el servidor, no pudimos crear el servicio inténtalo mas tarde"})
-    }/* finally{
-        service_id = await models.services.findByPk(response.id_service),
-        console.log("id encontrado ", service_id);
-        response = await models.service_status.create({
-            id_service: service_id,
-            company_confirmation: false,
-            person_confirmation: false,
-        })
-    } */
-    res.status(200).json(response);
-
-
-}
-
-// function to delete a service from the database
-// the endpoint config is Petition type DELETE url "some host" /api/deleteservice/id
-// has no parameters
-// returns a JSON object with the deleted service data
-// if there is an error returns a JSON object with a message
-
-export const deleteservice = async (req, res) => {
-    let response;
-    let {id} = req.params;
-
-    try{
-        response = await models.service.destroy({
-            where: {id_service: id}
-        })
-    }catch(error){
-        res.status(500).json({"message": "Error en el servidor, no pudimos eliminar la compañía solicitada"})
     }
     res.status(200).json(response);
 }
