@@ -46,15 +46,36 @@
       "/api/createUser": {
         "post": {
           "summary": "Crear un usuario",
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Person"
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "skills_id": {
+                    "type": "integer"
+                  },
+                  "personality_id": {
+                    "type": "integer"
+                  },
+                  "hourly_rate": {
+                    "type": "integer"
+                  },
+                  "account_type": {
+                    "type": "string"
+                  },
+                  "profile_image": {
+                    "type": "string"
+                  }
                 }
               }
             }
-          },
+          ],
           "responses": {
             "200": {
               "description": "Usuario creado"
@@ -74,17 +95,36 @@
               "schema": {
                 "type": "string"
               }
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "person_name": {
+                    "type": "string"
+                  },
+                  "skills_id": {
+                    "type": "integer"
+                  },
+                  "personality_id": {
+                    "type": "integer"
+                  },
+                  "hourly_rate": {
+                    "type": "integer"
+                  },
+                  "account_type": {
+                    "type": "string"
+                  },
+                  "profile_image": {
+                    "type": "string"
+                  }
               }
             }
-          },
+          }
+          ],
           "responses": {
             "200": {
               "description": "Usuario actualizado"
@@ -147,15 +187,27 @@
       "/api/createCompany": {
         "post": {
           "summary": "Crear una empresa",
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "company_name": {
+                    "type": "string"
+                  },
+                  "account_type": {
+                    "type": "string"
+                  },
+                  "company_logo": {
+                    "type": "string"
+                  }
                 }
               }
             }
-          },
+          ],
           "responses": {
             "200": {
               "description": "Empresa creada"
@@ -175,17 +227,27 @@
               "schema": {
                 "type": "string"
               }
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Company"
-                }
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "company_name": {
+                    "type": "string"
+                  },
+                  "account_type": {
+                    "type": "string"
+                  },
+                  "company_logo": {
+                    "type": "string"
+                  }
               }
             }
-          },
+          }
+          ],
           "responses": {
             "200": {
               "description": "Empresa actualizada"
@@ -248,15 +310,33 @@
       "/api/createService": {
         "post": {
           "summary": "Crear un servicio",
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Services"
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "integer"
+                  },
+                  "company_id": {
+                    "type": "integer"
+                  },
+                  "service_description": {
+                    "type": "string"
+                  },
+                  "work_duration": {
+                    "type": "integer"
+                  },
+                  "set_date": {
+                    "type": "date"
+                  }
                 }
               }
             }
-          },
+          ],
           "responses": {
             "200": {
               "description": "Servicio creado"
@@ -276,41 +356,36 @@
               "schema": {
                 "type": "string"
               }
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Services"
+            },
+            {
+              "in": "body",
+              "name": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "person_id": {
+                    "type": "integer"
+                  },
+                  "company_id": {
+                    "type": "integer"
+                  },
+                  "service_description": {
+                    "type": "string"
+                  },
+                  "work_duration": {
+                    "type": "integer"
+                  },
+                  "set_date": {
+                    "type": "date"
+                  }
                 }
               }
             }
-          },
-          "responses": {
-            "200": {
-              "description": "Servicio actualizado"
-            }
-          }
-        }
-      },
-      "/api/deleteService/{id}": {
-        "delete": {
-          "summary": "Eliminar un servicio",
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "description": "Id del servicio",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
-            }
           ],
           "responses": {
             "200": {
-              "description": "Servicio eliminado"
+              "description": "Servicio actualizado"
             }
           }
         }

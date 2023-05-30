@@ -126,8 +126,22 @@ export const createService = async (req, res) =>{
             "work_status": "Estado del trabajo",
             "calification": "Calificación del trabajo",
         } 
-        
         */
+        /* 
+            {
+            "person_id": 2,
+            "company_id": 4,
+            "service_description": "descripcion del servicio entre la persona Gael García Bernal y la empresa amazon por un total de 4 horas iniciando el 1 de junio de 2023 a las 10 de la mañana y terminando 4 horas despues ",
+            "rate_hour": "string",
+            "work_duration": 0,
+            "work_start_date": "Unknown Type: date",
+            "work_end_date": "Unknown Type: date",
+            "work_status": 0,
+            "calification": 0
+            }
+        */
+        
+        
     }catch(error){
         console.error(error);
         res.status(500).json({"message": "Error en el servidor, no pudimos crear el servicio inténtalo mas tarde"})
